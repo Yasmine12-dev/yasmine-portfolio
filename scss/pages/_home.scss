@@ -1,0 +1,1175 @@
+
+/* =========================================
+   HOME PAGE — V2
+   Shared by English and French homepages
+========================================= */
+
+.home-v2 {
+  overflow: hidden;
+
+  section {
+    padding-block: 5.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.home-v2-hero {
+  position: relative;
+  padding-block: 5rem 2rem !important;
+}
+
+.home-v2-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 5rem;
+  min-height: 570px;
+}
+
+.home-v2-intro {
+  max-width: 590px;
+}
+
+.home-v2-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.8rem;
+  color: $muted;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.home-v2-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: $accent;
+  box-shadow: 0 0 0 4px $surface-accent;
+}
+
+.home-v2-intro h1 {
+  margin-bottom: 1.2rem;
+  color: $ink;
+  font-size: clamp(3rem, 5.4vw, 5.2rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.065em;
+
+  span {
+    color: $accent;
+  }
+}
+
+.home-v2-role {
+  margin-bottom: 1rem;
+  color: $ink;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.home-v2-description {
+  max-width: 510px;
+  margin-bottom: 2rem;
+  color: $muted;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.home-v2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.home-v2-primary,
+.home-v2-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 48px;
+  padding: 0.85rem 1.3rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.home-v2-primary {
+  background: $accent;
+  color: $on-accent;
+
+  &:hover {
+    background: $accent-hover;
+    transform: translateY(-2px);
+  }
+}
+
+.home-v2-secondary {
+  border-color: $line-strong;
+  color: $ink;
+
+  &:hover {
+    border-color: $accent;
+    color: $accent;
+  }
+}
+
+.home-v2-socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  color: $muted;
+  font-size: 0.82rem;
+
+  a {
+    color: $muted;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  > span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: $muted;
+  }
+}
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.home-v2-visual {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+  padding: 0 1.1rem 1.1rem 0;
+
+  // An offset outline sits behind the frame, like a mounted print.
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1.1rem;
+    right: 0;
+    bottom: 0;
+    left: 1.1rem;
+    border: 1px solid $line-strong;
+    border-radius: 8px;
+    transition: transform 0.35s ease, border-color 0.35s ease;
+  }
+
+  &:hover::before {
+    transform: translate(3px, 3px);
+    border-color: $accent;
+  }
+}
+
+.home-v2-image-frame {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: 8px;
+  background: $surface;
+  box-shadow: 0 18px 40px $shadow;
+}
+
+.home-v2-image-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: $surface-accent;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  // Fine corner marks, the way a studio portrait is framed.
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 0 solid $accent;
+    opacity: 0.85;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 0.9rem;
+    left: 0.9rem;
+    border-top-width: 2px;
+    border-left-width: 2px;
+  }
+
+  &::after {
+    right: 0.9rem;
+    bottom: 0.9rem;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+  }
+}
+
+.home-v2-image-plate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1.2rem;
+  border-top: 1px solid $line;
+  background: $surface;
+
+  strong {
+    display: block;
+    color: $ink;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  em {
+    display: block;
+    margin-top: 0.15rem;
+    color: $muted;
+    font-size: 0.74rem;
+    font-style: normal;
+  }
+}
+
+.home-v2-image-year {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid $line-strong;
+  border-radius: 999px;
+  color: $accent;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+// Sits over the empty top-left corner of the portrait, clear of the face.
+.home-v2-floating-card {
+  position: absolute;
+  top: 1.6rem;
+  left: -3.6rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1.1rem 0.85rem 0.85rem;
+  border: 1px solid $line;
+  border-radius: 12px;
+  background: $surface;
+  box-shadow: 0 12px 30px $shadow;
+  animation: home-float 6s ease-in-out infinite;
+}
+
+@keyframes home-float {
+  50% { transform: translateY(-6px); }
+}
+
+.home-v2-floating-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 10px;
+  background: $accent;
+  color: $on-accent;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.home-v2-floating-card strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: $ink;
+  font-size: 0.85rem;
+}
+
+.home-v2-floating-card p {
+  margin: 0;
+  color: $muted;
+  font-size: 0.78rem;
+}
+
+.home-v2-bottom-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid $line;
+  color: $muted;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+
+  a {
+    color: $ink;
+  }
+}
+
+/* =========================================
+   INTRODUCTION STRIP
+========================================= */
+
+.home-v2-intro-strip {
+  padding-block: 1rem 2rem !important;
+}
+
+// A soft card with an oversized quote mark, instead of a full-width band.
+.home-v2-strip-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.7fr 1.8fr auto;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+  padding: 2.2rem 2.4rem 2.2rem 2.8rem;
+  border: 1px solid $line;
+  border-radius: 14px;
+  background: linear-gradient(120deg, $surface 0%, $surface-accent 100%);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  // Thin accent bar on the left edge.
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1.4rem;
+    bottom: 1.4rem;
+    left: 0;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: $accent;
+  }
+
+  &:hover {
+    border-color: $line-strong;
+    box-shadow: 0 14px 34px $shadow;
+  }
+
+  p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: $ink;
+    font-size: 1.02rem;
+    line-height: 1.8;
+  }
+
+  > a {
+    position: relative;
+    z-index: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid $line-strong;
+    border-radius: 999px;
+    background: $paper;
+    color: $accent;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      border-color: $accent;
+      background: $accent;
+      color: $on-accent;
+    }
+  }
+}
+
+.home-v2-strip-mark {
+  position: absolute;
+  top: -2.2rem;
+  right: 9rem;
+  color: $accent;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 11rem;
+  line-height: 1;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.home-v2-section-label {
+  color: $accent;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.home-v2-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+
+  h2 {
+    margin: 0.7rem 0 0;
+    color: $ink;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 1.15;
+  }
+}
+
+.home-v2-view-all {
+  color: $muted;
+  font-size: 0.85rem;
+  white-space: nowrap;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+/* =========================================
+   FEATURED PROJECTS
+========================================= */
+
+.home-v2-projects {
+  background: $paper;
+}
+
+.home-v2-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.home-v2-project-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: 8px;
+  background: $surface;
+  color: $ink;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $accent;
+    box-shadow: 0 12px 30px $shadow;
+  }
+}
+
+.home-v2-project-image {
+  position: relative;
+  display: grid;
+  aspect-ratio: 16 / 10;
+  place-items: center;
+  overflow: hidden;
+  background: $surface-accent;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.home-v2-project-index,
+.home-v2-project-open {
+  position: absolute;
+  top: 1rem;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: $surface;
+  color: $ink;
+  font-size: 0.75rem;
+}
+
+.home-v2-project-index {
+  left: 1rem;
+}
+
+.home-v2-project-open {
+  right: 1rem;
+  font-size: 1rem;
+}
+
+.home-v2-project-info {
+  padding: 1.4rem;
+
+  h3 {
+    margin: 0.7rem 0;
+    color: $ink;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0;
+    color: $muted;
+    font-size: 0.86rem;
+    line-height: 1.75;
+  }
+}
+
+.home-v2-project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: $accent;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   FOCUS AREAS
+========================================= */
+
+.home-v2-focus {
+  background: $surface;
+}
+
+.home-v2-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.home-v2-focus-card {
+  position: relative;
+  min-height: 280px;
+  padding: 1.7rem;
+  border: 1px solid $line;
+  border-radius: 8px;
+  background: $paper;
+
+  h3 {
+    margin: 1.3rem 0 0.7rem;
+    color: $ink;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  p {
+    color: $muted;
+    font-size: 0.87rem;
+    line-height: 1.8;
+  }
+}
+
+.home-v2-focus-number {
+  color: $muted;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.home-v2-focus-symbol {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  margin-top: 1.3rem;
+  border: 1px solid $line-strong;
+  border-radius: 14px;
+  background: $surface-accent;
+  color: $accent;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.home-v2-focus-card:hover .home-v2-focus-symbol {
+  transform: rotate(-6deg) scale(1.06);
+  background: $accent;
+  color: $on-accent;
+}
+
+.home-v2-focus-bottom {
+  display: block;
+  margin-top: 1.5rem;
+  color: $muted;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* =========================================
+   EXPERIENCE PREVIEW
+========================================= */
+
+.home-v2-experience {
+  background: $paper;
+}
+
+.home-v2-experience-list {
+  border-top: 1px solid $line;
+}
+
+.home-v2-experience-item {
+  display: grid;
+  grid-template-columns: 56px 170px 1fr 30px;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid $line;
+}
+
+.home-v2-experience-date {
+  color: $muted;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.home-v2-experience-type {
+  color: $accent;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.home-v2-experience-main {
+  h3 {
+    margin: 0.45rem 0;
+    color: $ink;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0;
+    color: $muted;
+    font-size: 0.87rem;
+  }
+}
+
+.home-v2-experience-arrow {
+  color: $accent;
+  font-size: 1.2rem;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.home-v2-cta-section {
+  padding-block: 3rem 6rem !important;
+  background: $paper;
+}
+
+.home-v2-cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 3rem;
+  overflow: hidden;
+  padding: 4rem;
+  border: 1px solid $line;
+  border-radius: 14px;
+  background: $surface;
+}
+
+// Concentric rings with a slow satellite: the same motif as the About card.
+.home-v2-cta-orbits {
+  position: absolute;
+  top: 50%;
+  right: -9rem;
+  width: 34rem;
+  height: 34rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  i {
+    position: absolute;
+    inset: 0;
+    border: 1px solid $line;
+    border-radius: 50%;
+
+    &:nth-child(2) { inset: 4.5rem; border-style: dashed; border-color: $line-strong; }
+    &:nth-child(3) { inset: 9rem; }
+  }
+
+  b {
+    position: absolute;
+    top: calc(50% - 6px);
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $accent;
+    box-shadow: 0 0 0 5px $surface, 0 0 18px 2px $accent;
+    transform-origin: calc(17rem + 6px) 6px;
+    animation: cta-orbit 24s linear infinite;
+  }
+}
+
+@keyframes cta-orbit {
+  to { transform: rotate(360deg); }
+}
+
+.home-v2-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+
+  h2 {
+    margin: 1rem 0;
+    color: $ink;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 1.1;
+
+    span {
+      color: $accent;
+    }
+  }
+
+  p {
+    max-width: 440px;
+    margin-bottom: 1.7rem;
+    color: $muted;
+    line-height: 1.8;
+  }
+}
+
+.home-v2-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.4rem;
+}
+
+.home-v2-cta-mail {
+  color: $muted;
+  font-size: 0.86rem;
+  border-bottom: 1px solid $line-strong;
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    color: $accent;
+    border-color: $accent;
+  }
+}
+
+// A boarding pass: the next trip is to a visitor's team.
+.home-v2-pass {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid $line-strong;
+  border-radius: 16px;
+  background: $paper;
+  box-shadow: 0 24px 50px $shadow;
+  transform: rotate(-2deg);
+  transition: transform 0.45s ease;
+
+  &:hover {
+    transform: rotate(0deg) translateY(-4px);
+  }
+
+  small,
+  dt {
+    display: block;
+    color: $muted;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
+
+.pass-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.4rem;
+  background: $accent;
+  color: $on-accent;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+
+  em {
+    font-style: normal;
+    opacity: 0.8;
+  }
+}
+
+.pass-route {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 1.4rem 1rem;
+
+  > div:last-child {
+    text-align: right;
+  }
+
+  strong {
+    display: block;
+    margin: 0.2rem 0 0.1rem;
+    color: $ink;
+    font-size: 2.1rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  span {
+    color: $muted;
+    font-size: 0.76rem;
+  }
+}
+
+.pass-path {
+  position: relative;
+  height: 28px;
+
+  i {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    border-top: 1.5px dashed $line-strong;
+  }
+
+  b {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 50%;
+    background: $surface-accent;
+    color: $accent;
+    transform: translate(0, -50%);
+    animation: pass-fly 5s ease-in-out infinite;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@keyframes pass-fly {
+  0%, 10%   { left: 0; }
+  55%, 70%  { left: calc(100% - 28px); }
+  100%      { left: 0; }
+}
+
+.pass-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1rem;
+  margin: 0;
+  padding: 0.4rem 1.4rem 1.3rem;
+
+  dd {
+    margin: 0.2rem 0 0;
+    color: $ink;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+}
+
+// Perforated line with two round notches, like a real ticket stub.
+.pass-tear {
+  position: relative;
+  margin: 0 1rem;
+  border-top: 2px dashed $line;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -11px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $line-strong;
+    border-radius: 50%;
+    background: $surface;
+  }
+
+  &::before { left: -1.65rem; }
+  &::after  { right: -1.65rem; }
+}
+
+.pass-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem 0.9rem;
+
+  span {
+    color: $ink;
+    font-size: 0.8rem;
+  }
+}
+
+.pass-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: $surface-accent;
+  color: $accent !important;
+  font-size: 0.68rem !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $accent;
+    animation: pass-pulse 1.6s ease-out infinite;
+  }
+}
+
+@keyframes pass-pulse {
+  0%   { box-shadow: 0 0 0 0 $focus-ring; }
+  100% { box-shadow: 0 0 0 8px transparent; }
+}
+
+.pass-barcode {
+  height: 26px;
+  margin: 0 1.4rem 1.2rem;
+  opacity: 0.55;
+  background: repeating-linear-gradient(
+    90deg,
+    $ink 0 2px, transparent 2px 4px,
+    $ink 4px 5px, transparent 5px 8px,
+    $ink 8px 11px, transparent 11px 12px,
+    $ink 12px 13px, transparent 13px 16px
+  );
+}
+
+// With JavaScript the pass slides in when the card scrolls into view.
+.cta-armed .home-v2-pass {
+  opacity: 0;
+  transform: rotate(4deg) translateY(30px);
+}
+
+.cta-armed.is-in .home-v2-pass {
+  opacity: 1;
+  transform: rotate(-2deg);
+  transition: opacity 0.6s ease 0.15s, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s;
+
+  &:hover {
+    transform: rotate(0deg) translateY(-4px);
+    transition-delay: 0s;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .home-v2-hero-grid {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .home-v2-visual {
+    max-width: 350px;
+  }
+
+  .home-v2-floating-card {
+    left: -1rem;
+  }
+
+  .home-v2-cta {
+    grid-template-columns: 1fr;
+    padding: 3rem 2rem;
+  }
+
+  .home-v2-pass,
+  .cta-armed.is-in .home-v2-pass {
+    max-width: 440px;
+    transform: none;
+  }
+
+  .home-v2-strip-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    > a {
+      justify-self: start;
+    }
+  }
+
+  .home-v2-project-grid,
+  .home-v2-focus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-v2-project-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .home-v2 section {
+    padding-block: 3.5rem;
+  }
+
+  .home-v2-hero {
+    padding-top: 3.5rem !important;
+  }
+
+  .home-v2-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .home-v2-intro h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .home-v2-description {
+    font-size: 0.92rem;
+  }
+
+  .home-v2-visual {
+    width: min(88%, 390px);
+    max-width: none;
+    justify-self: center;
+  }
+
+  .home-v2-floating-card {
+    top: 1.4rem;
+    left: -0.6rem;
+  }
+
+  .home-v2-cta-orbits {
+    right: -14rem;
+    opacity: 0.6;
+  }
+
+  .home-v2-bottom-line {
+    flex-direction: column;
+    margin-top: 3rem;
+    font-size: 0.58rem;
+  }
+
+  .home-v2-strip-card {
+    padding: 1.8rem 1.4rem 1.8rem 1.8rem;
+  }
+
+  .home-v2-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .home-v2-project-grid,
+  .home-v2-focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-v2-project-card:last-child {
+    grid-column: auto;
+  }
+
+  .home-v2-experience-item {
+    grid-template-columns: 56px 1fr 25px;
+    gap: 0.6rem 1rem;
+  }
+
+  .home-v2-experience-date {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+
+  .home-v2-cta {
+    padding: 2.2rem 1.3rem;
+  }
+
+  .pass-route strong {
+    font-size: 1.6rem;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .home-v2 *,
+  .home-v2 *::before,
+  .home-v2 *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .cta-armed .home-v2-pass {
+    opacity: 1;
+  }
+}

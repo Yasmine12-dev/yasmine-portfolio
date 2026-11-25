@@ -1,0 +1,184 @@
+/* =========================================
+   EXPERIENCE PAGE
+========================================= */
+
+.experience-showcase {
+  padding-top: 1rem;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.experience-card {
+  // Subgrid shares row heights between the two cards, so they end up the
+  // same size and their dividers, lists and tags sit on the same lines.
+  display: grid;
+  grid-row: span 6;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  min-width: 0;
+  padding: 2rem;
+  border: 1px solid $line;
+  border-radius: 10px;
+  background: $surface;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 12px 30px $shadow;
+  }
+
+  h4 {
+    margin: 0 0 0.8rem;
+    color: $ink;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .experience-tags {
+    align-self: end;
+  }
+}
+
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.company-mark {
+  display: grid;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 1px solid $accent;
+  border-radius: 10px;
+  background: $accent;
+  color: $on-accent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.company-mark svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.35s ease;
+}
+
+.experience-card:hover .company-mark svg,
+.home-v2-experience-item:hover .company-mark svg {
+  transform: rotate(-8deg) scale(1.12);
+}
+
+.experience-period {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  color: $muted;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: right;
+
+  span:first-child {
+    color: $ink;
+  }
+}
+
+.experience-info {
+  h2 {
+    margin: 0.6rem 0 0.3rem;
+    color: $ink;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    margin: 0 0 1rem;
+    color: $muted;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    span {
+      color: $accent;
+    }
+  }
+}
+
+.experience-category {
+  color: $accent;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.experience-description {
+  margin: 0;
+  color: $muted;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.experience-divider {
+  height: 1px;
+  margin: 1.5rem 0;
+  background: $line;
+}
+
+.experience-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 1.2rem;
+    color: $muted;
+    font-size: 0.88rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.65em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $accent;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
+    display: flex;
+    flex-direction: column;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .experience-card {
+    padding: 1.4rem;
+  }
+}

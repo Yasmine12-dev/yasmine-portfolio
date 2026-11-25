@@ -1,0 +1,178 @@
+// Project teaser on the home page.
+.card {
+  display: block;
+  border: 1px solid $line;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $paper;
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+
+  &:hover {
+    border-color: $line-strong;
+    box-shadow: 0 2px 12px $shadow;
+  }
+
+  img {
+    width: 100%;
+    border-bottom: 1px solid $line;
+  }
+
+  .card__body {
+    padding: 1rem 1.1rem 1.2rem;
+  }
+
+  h3 {
+    margin: 0.35rem 0 0.5rem;
+  }
+
+  p {
+    font-size: 0.9375rem;
+    color: $muted;
+    margin: 0;
+  }
+}
+
+// Full project write-up on the projects page: a stacked card per project,
+// with the detail folded away behind a <details> toggle.
+.case {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border: 1px solid $line;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $paper;
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
+  // Natural ratio, never cropped: these are mockups, and cover would cut
+  // the content off once the card grows.
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  dl {
+    margin: 1rem 0 0.25rem;
+    font-size: 0.9375rem;
+  }
+
+  dt {
+    font-weight: 600;
+    margin-top: 0.9rem;
+  }
+
+  dd {
+    margin: 0.15rem 0 0;
+    color: $muted;
+  }
+}
+
+.case__shot {
+  background: $surface-accent;
+  border-right: 1px solid $line;
+  align-self: start;
+
+  @include md {
+    border-right: 0;
+    border-bottom: 1px solid $line;
+  }
+}
+
+.case__body {
+  padding: 1.5rem 1.75rem;
+
+  @include md {
+    padding: 1.25rem;
+  }
+}
+
+.case__more {
+  border-top: 1px solid $line;
+  margin-top: 1.25rem;
+  padding-top: 0.9rem;
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: $accent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    // Chevron, rotated when the card is open.
+    &::after {
+      content: '';
+      width: 0.45rem;
+      height: 0.45rem;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translate(-1px, -1px);
+      transition: transform 0.15s;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.case__more[open] summary::after {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+// Date on the left, content on the right.
+.row {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid $line;
+
+  @include md {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+
+  span {
+    font-size: 0.8125rem;
+    color: $accent;
+    background: $surface-accent;
+    border-radius: 999px;
+    padding: 0.15rem 0.7rem;
+  }
+}
+
+// Skills and languages on the learning page.
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+
+  li {
+    font-size: 0.875rem;
+    background: $surface-accent;
+    border-radius: 999px;
+    padding: 0.2rem 0.8rem;
+  }
+}

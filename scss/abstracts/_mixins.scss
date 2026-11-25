@@ -1,0 +1,6 @@
+// Narrow screens: tablets and phones.
+@mixin md {
+  @media (max-width: $bp-md) {
+    @content;
+  }
+}

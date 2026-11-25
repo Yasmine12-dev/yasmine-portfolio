@@ -1,0 +1,52 @@
+.hero {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid $line;
+
+  @include md {
+    padding: 3rem 0 2.5rem;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    margin-bottom: 0.4rem;
+
+    @include md {
+      font-size: 2.125rem;
+    }
+  }
+
+  .role {
+    font-size: 1.125rem;
+    color: $accent;
+    font-weight: 500;
+  }
+
+  p.lead {
+    margin-top: 1rem;
+  }
+}
+
+// Text on the left, portrait on the right.
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 3rem;
+  align-items: center;
+
+  @include md {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+.portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid $line;
+
+  @include md {
+    width: 150px;
+  }
+}

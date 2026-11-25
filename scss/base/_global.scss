@@ -1,0 +1,20 @@
+.wrap {
+  width: min($measure, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+// Visible only once focused, for keyboard users.
+.skip {
+  position: absolute;
+  left: -999px;
+
+  &:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 99;
+    background: $accent;
+    color: $paper;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+}

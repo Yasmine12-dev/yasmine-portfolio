@@ -1,0 +1,398 @@
+/* =========================================
+   PROJECTS PAGE
+   Three cards on the first row, the two wide ones on the second.
+========================================= */
+
+.projects-showcase {
+  padding-top: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: 8px;
+  background: $surface;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $accent;
+    box-shadow: 0 12px 30px $shadow;
+  }
+}
+
+.project-card--wide {
+  grid-column: span 3;
+
+  .project-image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.project-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: $surface-accent;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.image-overlay {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: $paper;
+  color: $ink;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.4rem;
+
+  h2 {
+    margin: 0.6rem 0;
+    color: $ink;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  > p {
+    margin: 0 0 1rem;
+    color: $muted;
+    font-size: 0.87rem;
+    line-height: 1.75;
+  }
+
+  .project-tags {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.project-category {
+  color: $accent;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+// "View project" button at the bottom of each card.
+.project-open {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  margin-top: auto;
+  padding: 1rem 0 0;
+  border: 0;
+  border-top: 1px solid $line;
+  background: none;
+  color: $accent;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+
+  span {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    text-decoration: underline;
+
+    span {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+/* =========================================
+   PROJECT WINDOW (dialog)
+========================================= */
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.project-modal {
+  width: min(780px, calc(100% - 2rem));
+  max-height: calc(100vh - 3rem);
+  max-height: calc(100dvh - 3rem);
+  // The global reset zeroes margins; auto is what centres a modal dialog.
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid $line;
+  border-radius: 12px;
+  background: $paper;
+  color: $ink;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+
+  &::backdrop {
+    background: rgba(10, 12, 16, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  &[open] {
+    animation: project-modal-in 0.25s ease;
+  }
+}
+
+@keyframes project-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+.project-modal__inner {
+  position: relative;
+}
+
+.project-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid $line;
+  border-radius: 50%;
+  background: $paper;
+  color: $ink;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    border-color: $accent;
+    color: $accent;
+  }
+}
+
+.project-modal__image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid $line;
+  background: $surface-accent;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.project-modal__body {
+  padding: 2rem 2.2rem 2.2rem;
+
+  h2 {
+    margin: 0.5rem 0 0.3rem;
+    color: $ink;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+
+  h3 {
+    margin: 1.8rem 0 0.7rem;
+    color: $ink;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+.project-modal__context {
+  margin: 0 0 1.2rem;
+  color: $accent;
+  font-size: 0.85rem;
+}
+
+.project-modal__lead {
+  max-width: none;
+  margin: 0;
+  color: $muted;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.project-modal__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  > div {
+    padding: 1.2rem;
+    border: 1px solid $line;
+    border-radius: 8px;
+    background: $surface;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    margin: 0;
+    color: $muted;
+    font-size: 0.88rem;
+    line-height: 1.75;
+  }
+}
+
+.project-modal__list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 1.2rem;
+    color: $muted;
+    font-size: 0.9rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.65em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $accent;
+    }
+  }
+}
+
+.project-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $line;
+}
+
+.project-modal__github,
+.project-modal__secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 46px;
+  padding: 0.75rem 1.3rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-modal__github {
+  background: $ink;
+  color: $paper;
+
+  &:hover {
+    background: $accent;
+    color: $on-accent;
+    transform: translateY(-2px);
+  }
+}
+
+.project-modal__secondary {
+  border-color: $line-strong;
+  background: none;
+  color: $ink;
+
+  &:hover {
+    border-color: $accent;
+    color: $accent;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card,
+  .project-card--wide {
+    grid-column: auto;
+  }
+
+  // Five cards in two columns: let the third one take the full row.
+  .project-card:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .project-modal {
+    width: calc(100% - 1rem);
+    max-height: calc(100dvh - 1rem);
+  }
+
+  .project-modal__body {
+    padding: 1.4rem;
+  }
+
+  .project-modal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-modal__actions > * {
+    flex: 1;
+    justify-content: center;
+  }
+}

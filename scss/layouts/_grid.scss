@@ -1,0 +1,22 @@
+// Three across, stacked on narrow screens.
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Heading on the left, text on the right.
+.cols2 {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  gap: 2.5rem;
+
+  @include md {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

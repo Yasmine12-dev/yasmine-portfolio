@@ -1,0 +1,858 @@
+/* =========================================
+   ABOUT PAGE — V2
+   Shared by English and French about pages
+========================================= */
+
+.about-v2 {
+  overflow: hidden;
+
+  section {
+    padding-block: 5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+// Shared heading style for the section titles.
+.about-v2-story-title h2,
+.about-v2-interests-header h2,
+.about-v2-journey-header h2 {
+  margin-bottom: 1rem;
+  color: $ink;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+
+  span {
+    color: $accent;
+  }
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.about-v2-hero {
+  border-bottom: 1px solid $line;
+}
+
+.about-v2-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-v2-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.8rem;
+  color: $muted;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.about-v2-kicker-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: $accent;
+  box-shadow: 0 0 0 4px $surface-accent;
+}
+
+.about-v2-intro h1 {
+  margin-bottom: 1.4rem;
+  color: $ink;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+
+  span {
+    color: $accent;
+  }
+}
+
+.about-v2-lead {
+  max-width: 520px;
+  margin-bottom: 2rem;
+  color: $muted;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.about-v2-intro-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-v2-link,
+.about-v2-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 48px;
+  padding: 0.85rem 1.3rem;
+  border-radius: 6px;
+  background: $accent;
+  color: $on-accent;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    background: $accent-hover;
+    transform: translateY(-2px);
+  }
+}
+
+.about-v2-intro-note {
+  color: $muted;
+  font-size: 0.8rem;
+}
+
+/* Profile panel */
+
+.about-v2-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+  padding: 1.6rem;
+  border: 1px solid $line;
+  border-radius: 10px;
+  background: $surface;
+}
+
+.about-v2-profile-top,
+.about-v2-profile-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: $muted;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.about-v2-profile-footer {
+  padding-top: 1rem;
+  border-top: 1px solid $line;
+}
+
+.about-v2-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: $accent;
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $accent;
+  }
+}
+
+.about-v2-monogram {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: $surface-accent;
+  color: $ink;
+  font-size: 5.5rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.08em;
+
+  // soft light that follows the pointer (set by js/profile-card.js)
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      220px circle at var(--mx, 50%) var(--my, 40%),
+      color-mix(in srgb, var(--accent) 22%, transparent),
+      transparent 70%
+    );
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  > span:not(.about-v2-orbit-dot) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.about-v2-monogram-b {
+  color: $accent;
+}
+
+.about-v2-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.about-v2-orbit-one {
+  width: 100%;
+  height: 100%;
+  border: 1px dashed $line-strong;
+}
+
+.about-v2-orbit-two {
+  width: 150px;
+  height: 150px;
+  border: 1px solid $line-strong;
+  animation: about-pulse 5s ease-in-out infinite;
+}
+
+// The outer ring turns slowly; skills ride on it and stay upright.
+.about-v2-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  margin: -110px 0 0 -110px;
+  animation: about-spin 36s linear infinite;
+  pointer-events: none;
+}
+
+.about-v2-orbit-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -5px 0 0 -5px;
+  transform: rotate(135deg) translateY(-110px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: $accent;
+  box-shadow: 0 0 0 4px $surface-accent, 0 0 14px 2px $accent;
+}
+
+.about-v2-sat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  transform: rotate(var(--a)) translateY(-110px);
+
+  b {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    border: 1px solid $line-strong;
+    border-radius: 50%;
+    background: $surface;
+    color: $accent;
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    rotate: calc(-1 * var(--a));
+    animation: about-unspin 36s linear infinite;
+  }
+}
+
+@keyframes about-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes about-unspin {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes about-pulse {
+  50% { transform: translate(-50%, -50%) scale(1.06); border-color: var(--accent); }
+}
+
+// Tilt + sheen when the pointer is over the card (js/profile-card.js).
+.about-v2-profile {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 18px 40px $shadow;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-v2-spin,
+  .about-v2-sat b,
+  .about-v2-orbit-two {
+    animation: none;
+  }
+
+  .about-v2-profile {
+    transform: none;
+  }
+}
+
+.about-v2-profile-info {
+  display: grid;
+  gap: 1rem;
+
+  h2 {
+    margin: 0.3rem 0 0;
+    color: $ink;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+}
+
+.about-v2-small-label {
+  display: block;
+  color: $muted;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.about-v2-profile-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+
+  p {
+    margin: 0.3rem 0 0;
+    color: $ink;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================
+   SECTION HEADING (index — line — caption)
+========================================= */
+
+.about-v2-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-v2-section-index {
+  color: $accent;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.about-v2-section-line {
+  flex: 1;
+  height: 1px;
+  background: $line;
+}
+
+.about-v2-section-caption {
+  color: $muted;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* =========================================
+   STORY
+========================================= */
+
+.about-v2-story-section {
+  border-bottom: 1px solid $line;
+  background: $surface;
+}
+
+.about-v2-story-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+}
+
+.about-v2-story-title p {
+  max-width: 360px;
+  color: $muted;
+  line-height: 1.8;
+}
+
+.about-v2-story-content {
+  > p {
+    margin-bottom: 1.2rem;
+    color: $muted;
+    line-height: 1.85;
+  }
+
+  strong {
+    color: $ink;
+    font-weight: 600;
+  }
+}
+
+.about-v2-quote {
+  position: relative;
+  margin-top: 2rem;
+  padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+  border-left: 2px solid $accent;
+  border-radius: 0 8px 8px 0;
+  background: $paper;
+
+  p {
+    margin: 0;
+    color: $ink;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+.about-v2-quote-mark {
+  position: absolute;
+  top: 0.9rem;
+  left: 1.1rem;
+  color: $accent;
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+/* =========================================
+   INTERESTS
+========================================= */
+
+.about-v2-interests-header,
+.about-v2-journey-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  > p {
+    margin: 0;
+    color: $muted;
+    line-height: 1.8;
+  }
+}
+
+.about-v2-interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.about-v2-interest-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.7rem;
+  border: 1px solid $line;
+  border-radius: 8px;
+  background: $surface;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $accent;
+  }
+
+  h3 {
+    margin: 1.5rem 0 0.7rem;
+    color: $ink;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  p {
+    flex: 1;
+    margin-bottom: 0;
+    color: $muted;
+    font-size: 0.87rem;
+    line-height: 1.8;
+  }
+}
+
+.about-v2-interest-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-v2-interest-number {
+  color: $muted;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.about-v2-interest-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-v2-interest-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: $surface-accent;
+  color: $accent;
+  font-size: 1.2rem;
+}
+
+.about-v2-interest-tag {
+  margin-top: 1.5rem;
+  color: $accent;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* =========================================
+   JOURNEY / TIMELINE
+========================================= */
+
+.about-v2-journey-section {
+  border-block: 1px solid $line;
+  background: $surface;
+}
+
+.about-v2-timeline {
+  border-top: 1px solid $line;
+}
+
+.about-v2-timeline-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid $line;
+
+  &:hover .about-v2-timeline-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+
+.about-v2-timeline-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.about-v2-timeline-year {
+  color: $ink;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.about-v2-timeline-type {
+  color: $accent;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.about-v2-timeline-content {
+  display: grid;
+  grid-template-columns: 40px 1fr 30px;
+  align-items: start;
+  gap: 1.2rem;
+
+  h3 {
+    margin-bottom: 0.3rem;
+    color: $ink;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0;
+    color: $muted;
+    font-size: 0.87rem;
+    line-height: 1.75;
+  }
+
+  .about-v2-timeline-place {
+    margin-bottom: 0.6rem;
+    color: $accent;
+    font-size: 0.85rem;
+  }
+}
+
+.about-v2-timeline-count {
+  padding-top: 0.2rem;
+  color: $muted;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.about-v2-timeline-arrow {
+  color: $accent;
+  font-size: 1.1rem;
+  text-align: right;
+  transition: transform 0.2s ease;
+}
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.about-v2-closing-section {
+  padding-block: 4rem 6rem !important;
+}
+
+.about-v2-closing {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  overflow: hidden;
+  padding: 4rem;
+  border: 1px solid $line;
+  border-radius: 10px;
+  background: $surface;
+
+  > div:first-child {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+  }
+
+  .about-v2-kicker {
+    margin-bottom: 0;
+    color: $accent;
+  }
+
+  h2 {
+    margin: 1rem 0;
+    color: $ink;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.06em;
+
+    span {
+      color: $accent;
+    }
+  }
+
+  > div:first-child > p {
+    max-width: 460px;
+    margin: 0 0 1.8rem;
+    color: $muted;
+    line-height: 1.8;
+  }
+}
+
+.about-v2-contact-link {
+  position: relative;
+  z-index: 1;
+}
+
+// Now / exploring / next: a tiny vertical roadmap whose last stop is open.
+.about-v2-now {
+  position: relative;
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0 0 0 1.6rem;
+  list-style: none;
+
+  // The rail joining the three stops.
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1.2rem;
+    bottom: 1.2rem;
+    left: 0.35rem;
+    width: 2px;
+    background: linear-gradient($accent, $line-strong);
+  }
+
+  li {
+    position: relative;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid $line;
+    border-radius: 10px;
+    background: $paper;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc(-1.6rem + 0.35rem - 4px);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $accent;
+      box-shadow: 0 0 0 4px $surface;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      border-color: $accent;
+      transform: translateX(4px);
+    }
+  }
+
+  span {
+    color: $accent;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+  }
+
+  p {
+    margin: 0.25rem 0 0;
+    color: $ink;
+    font-size: 0.9rem;
+  }
+
+  .is-next {
+    border-style: dashed;
+    border-color: $line-strong;
+    background: transparent;
+
+    &::before {
+      background: $surface;
+      border: 2px solid $accent;
+      animation: now-pulse 1.8s ease-out infinite;
+    }
+  }
+}
+
+@keyframes now-pulse {
+  0%   { box-shadow: 0 0 0 4px $surface, 0 0 0 4px $focus-ring; }
+  100% { box-shadow: 0 0 0 4px $surface, 0 0 0 12px transparent; }
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .about-v2-closing {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-v2 section {
+    padding-block: 4rem;
+  }
+
+  .about-v2-hero-grid,
+  .about-v2-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-v2-profile {
+    justify-self: start;
+  }
+
+  .about-v2-interests-header,
+  .about-v2-journey-header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-v2-interest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-v2-interest-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .about-v2-timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .about-v2-timeline-side {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .about-v2 section {
+    padding-block: 3rem;
+  }
+
+  .about-v2-closing-section {
+    padding-block: 2rem 4rem !important;
+  }
+
+  .about-v2-section-caption {
+    display: none;
+  }
+
+  .about-v2-interest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-v2-interest-card:last-child {
+    grid-column: auto;
+  }
+
+  .about-v2-timeline-content {
+    grid-template-columns: 30px 1fr;
+    gap: 0.8rem;
+  }
+
+  .about-v2-timeline-arrow {
+    display: none;
+  }
+
+  .about-v2-closing {
+    padding: 2.2rem 1.4rem;
+  }
+
+
+}

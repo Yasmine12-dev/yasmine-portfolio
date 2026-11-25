@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Yasmine Baba</title>
+  <meta name="description" content="Projects by Yasmine Baba: a PHP security-alert interface built on Wazuh, an ATM simulation in C, a C++ fighting game, a UML registration system and a time-management web app.">
+
+  <link rel="canonical" href="https://yasmine-portfolio.vercel.app/projects.html">
+  <link rel="alternate" hreflang="en" href="https://yasmine-portfolio.vercel.app/projects.html">
+  <link rel="alternate" hreflang="fr" href="https://yasmine-portfolio.vercel.app/fr/projects.html">
+  <link rel="alternate" hreflang="x-default" href="https://yasmine-portfolio.vercel.app/projects.html">
+  <meta name="author" content="Yasmine Baba">
+  <meta name="theme-color" content="#fcfaff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#17131e" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Yasmine Baba">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Projects — Yasmine Baba">
+  <meta property="og:description" content="Projects by Yasmine Baba: a PHP security-alert interface built on Wazuh, an ATM simulation in C, a C++ fighting game, a UML registration system and a time-management web app.">
+  <meta property="og:url" content="https://yasmine-portfolio.vercel.app/projects.html">
+  <meta property="og:image" content="https://yasmine-portfolio.vercel.app/assets/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Yasmine Baba, Computer Science Engineering student">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    try {
+      document.documentElement.dataset.theme =
+        localStorage.getItem('theme')
+        || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  </script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Yasmine Baba, home"><svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect class="logo__tile" width="32" height="32" rx="9"/><path class="logo__glyph" d="M5.5 10 11 17.5 16.5 10M11 17.5V24M19.5 9.5V24M19.5 9.5h3.7a3.4 3.4 0 0 1 0 6.8h-3.7m0 0h4.3a3.9 3.9 0 0 1 0 7.7h-4.3"/><circle class="logo__dot" cx="26.8" cy="5.6" r="1.7"/></svg><span class="logo__word"><b>Yasmine</b> <span>Baba</span></span></a>
+      <nav aria-label="Main">
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="learning.html">Learning</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav__right">
+        <div class="lang">
+          <span aria-current="true">EN</span>
+          <a href="fr/projects.html" hreflang="fr" lang="fr" aria-label="Voir cette page en francais">FR</a>
+        </div>
+        <button class="theme" type="button" aria-label="Switch to dark theme">
+          <svg class="moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>
+        </button>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  
+<main id="main">
+
+  <!-- Projects Hero -->
+  <section class="projects-hero">
+    <div class="wrap">
+      <div class="projects-badge" aria-hidden="true">
+        <svg class="projects-badge__ring" viewBox="0 0 120 120">
+          <defs><path id="badge-circle" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
+          <text><textPath href="#badge-circle" textLength="289">SELECTED WORK · BUILT WITH CURIOSITY · </textPath></text>
+        </svg>
+        <span class="projects-badge__core"><strong>05</strong><em>projects</em></span>
+      </div>
+      <span class="projects-eyebrow">✦ MY WORK</span>
+      <h1>Projects<span>.</span></h1>
+      <p>
+        A collection of projects that reflect my skills,
+        curiosity, and passion for technology.
+      </p>
+      <div class="hero-line"></div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-showcase">
+    <div class="wrap">
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1: LOGISOC -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/logisoc.svg"
+                 alt="LogiSOC security monitoring dashboard">
+            <span class="image-overlay">CYBERSECURITY</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-category">Cybersecurity</div>
+            <h2>LogiSOC</h2>
+            <p>
+              A PHP interface for visualising security alerts,
+              built during my internship at COMANAV / CMA CGM.
+            </p>
+
+            <div class="project-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Wazuh</span>
+              <span>Linux</span>
+            </div>
+
+            <button class="project-open" type="button" data-modal="project-logisoc" aria-haspopup="dialog">View project <span aria-hidden="true">↗</span></button>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: ATM -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/atm.svg"
+                 alt="ATM simulation terminal running on a laptop">
+            <span class="image-overlay">SYSTEMS PROGRAMMING</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-category">Systems Programming</div>
+            <h2>Smart ATM Simulation System</h2>
+            <p>
+              A C-based ATM simulation featuring structured
+              banking operations and user interaction.
+            </p>
+
+            <div class="project-tags">
+              <span>C</span>
+              <span>Functions</span>
+              <span>Algorithms</span>
+            </div>
+
+            <button class="project-open" type="button" data-modal="project-atm" aria-haspopup="dialog">View project <span aria-hidden="true">↗</span></button>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: FIGHTING GAME -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/fighting.svg"
+                 alt="C++ fighting game gameplay displayed on a laptop">
+            <span class="image-overlay">GAME DEVELOPMENT</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-category">Game Development</div>
+            <h2>Fighting Game</h2>
+            <p>
+              A C++ fighting game built around object-oriented
+              programming and character interactions.
+            </p>
+
+            <div class="project-tags">
+              <span>C++</span>
+              <span>OOP</span>
+              <span>Game Logic</span>
+            </div>
+
+            <button class="project-open" type="button" data-modal="project-fighting" aria-haspopup="dialog">View project <span aria-hidden="true">↗</span></button>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: UML -->
+        <article class="project-card project-card--wide">
+          <div class="project-image">
+            <img src="assets/images/projects/uml.svg"
+                 alt="UML class diagram displayed on a laptop">
+            <span class="image-overlay">SOFTWARE ENGINEERING</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-category">Systems Analysis</div>
+            <h2>Online Registration System</h2>
+            <p>
+              A UML-based university registration system
+              designed around requirements and system modelling.
+            </p>
+
+            <div class="project-tags">
+              <span>UML</span>
+              <span>Use Case Diagrams</span>
+              <span>Class Diagrams</span>
+            </div>
+
+            <button class="project-open" type="button" data-modal="project-uml" aria-haspopup="dialog">View project <span aria-hidden="true">↗</span></button>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: TIME MANAGER -->
+        <article class="project-card project-card--wide">
+          <div class="project-image">
+            <img src="assets/images/projects/timemanager.svg"
+                 alt="Time Manager application dashboard displayed on a laptop">
+            <span class="image-overlay">WEB DEVELOPMENT</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-category">Full-Stack Development</div>
+            <h2>Time Manager</h2>
+            <p>
+              A collaborative time-management application
+              for managing users, working hours and clock-in activities.
+            </p>
+
+            <div class="project-tags">
+              <span>Elixir</span>
+              <span>Phoenix</span>
+              <span>Vue.js</span>
+              <span>PostgreSQL</span>
+              <span>Docker</span>
+            </div>
+
+            <button class="project-open" type="button" data-modal="project-timemanager" aria-haspopup="dialog">View project <span aria-hidden="true">↗</span></button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Closing message -->
+      <div class="projects-footer-message">
+        <span>✦</span>
+        <p>Always exploring. Always building. More projects coming soon.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+  <!-- PROJECT WINDOWS -->
+  <dialog class="project-modal" id="project-logisoc" aria-labelledby="project-logisoc-title">
+    <div class="project-modal__inner">
+      <button class="project-modal__close" type="button" data-close aria-label="Close">&times;</button>
+      <div class="project-modal__image">
+        <img src="assets/images/projects/logisoc.svg" alt="LogiSOC security monitoring dashboard" loading="lazy">
+      </div>
+      <div class="project-modal__body">
+        <span class="project-category">Cybersecurity</span>
+        <h2 id="project-logisoc-title">LogiSOC</h2>
+        <p class="project-modal__context">Internship project · COMANAV / CMA CGM Group</p>
+        <p class="project-modal__lead">A PHP interface for visualising security alerts, built during my internship at COMANAV / CMA CGM.</p>
+        <div class="project-modal__grid">
+            <div>
+              <h3>Project overview</h3>
+              <p>A security monitoring interface designed to make Wazuh alerts and monitoring information easier to understand.</p>
+            </div>
+            <div>
+              <h3>My contribution</h3>
+              <p>Wazuh deployment and configuration, PHP interface development, database integration and alert analysis.</p>
+            </div>
+        </div>
+        <h3>Key features</h3>
+        <ul class="project-modal__list">
+            <li>Clear overview of the security alerts collected by Wazuh</li>
+            <li>Alerts organised by agent, rule and severity level</li>
+            <li>Monitoring of network agents and their status</li>
+            <li>Dashboards and report generation</li>
+        </ul>
+        <h3>Tech stack</h3>
+        <div class="project-tags">
+            <span>PHP</span>
+            <span>MySQL</span>
+            <span>Wazuh</span>
+            <span>Linux</span>
+        </div>
+        <div class="project-modal__actions">
+          <!-- To link the repository, add href="https://github.com/..." to this tag. -->
+          <button class="project-modal__secondary" type="button" data-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="project-modal" id="project-atm" aria-labelledby="project-atm-title">
+    <div class="project-modal__inner">
+      <button class="project-modal__close" type="button" data-close aria-label="Close">&times;</button>
+      <div class="project-modal__image">
+        <img src="assets/images/projects/atm.svg" alt="ATM simulation terminal running on a laptop" loading="lazy">
+      </div>
+      <div class="project-modal__body">
+        <span class="project-category">Systems Programming</span>
+        <h2 id="project-atm-title">Smart ATM Simulation System</h2>
+        <p class="project-modal__context">Academic project · C programming</p>
+        <p class="project-modal__lead">A C-based ATM simulation featuring structured banking operations and user interaction.</p>
+        <div class="project-modal__grid">
+            <div>
+              <h3>Project overview</h3>
+              <p>A console-based banking simulation supporting authentication, balance inquiries, deposits and withdrawals.</p>
+            </div>
+            <div>
+              <h3>Key concepts</h3>
+              <p>Functions, arrays, loops, conditional statements and structured programming.</p>
+            </div>
+        </div>
+        <h3>Key features</h3>
+        <ul class="project-modal__list">
+            <li>PIN authentication before any operation</li>
+            <li>Balance inquiry</li>
+            <li>Deposits and withdrawals</li>
+            <li>Menu-driven console interface</li>
+        </ul>
+        <h3>Tech stack</h3>
+        <div class="project-tags">
+            <span>C</span>
+            <span>Functions</span>
+            <span>Algorithms</span>
+        </div>
+        <div class="project-modal__actions">
+          <!-- To link the repository, add href="https://github.com/..." to this tag. -->
+          <button class="project-modal__secondary" type="button" data-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="project-modal" id="project-fighting" aria-labelledby="project-fighting-title">
+    <div class="project-modal__inner">
+      <button class="project-modal__close" type="button" data-close aria-label="Close">&times;</button>
+      <div class="project-modal__image">
+        <img src="assets/images/projects/fighting.svg" alt="C++ fighting game gameplay displayed on a laptop" loading="lazy">
+      </div>
+      <div class="project-modal__body">
+        <span class="project-category">Game Development</span>
+        <h2 id="project-fighting-title">Fighting Game</h2>
+        <p class="project-modal__context">Academic project · Object-oriented programming</p>
+        <p class="project-modal__lead">A C++ fighting game built around object-oriented programming and character interactions.</p>
+        <div class="project-modal__grid">
+            <div>
+              <h3>Project overview</h3>
+              <p>A fighting game where characters interact through gameplay mechanics and combat logic.</p>
+            </div>
+            <div>
+              <h3>Key concepts</h3>
+              <p>Classes, objects, encapsulation, character modelling and object-oriented design.</p>
+            </div>
+        </div>
+        <h3>Key features</h3>
+        <ul class="project-modal__list">
+            <li>Characters modelled as classes with their own attributes</li>
+            <li>Combat logic: attacks, damage and health</li>
+            <li>Encapsulated game state and character interactions</li>
+            <li>Object-oriented design of the game</li>
+        </ul>
+        <h3>Tech stack</h3>
+        <div class="project-tags">
+            <span>C++</span>
+            <span>OOP</span>
+            <span>Game Logic</span>
+        </div>
+        <div class="project-modal__actions">
+          <!-- To link the repository, add href="https://github.com/..." to this tag. -->
+          <button class="project-modal__secondary" type="button" data-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="project-modal" id="project-uml" aria-labelledby="project-uml-title">
+    <div class="project-modal__inner">
+      <button class="project-modal__close" type="button" data-close aria-label="Close">&times;</button>
+      <div class="project-modal__image">
+        <img src="assets/images/projects/uml.svg" alt="UML class diagram displayed on a laptop" loading="lazy">
+      </div>
+      <div class="project-modal__body">
+        <span class="project-category">Systems Analysis</span>
+        <h2 id="project-uml-title">Online Registration System</h2>
+        <p class="project-modal__context">Academic project · Systems analysis and design</p>
+        <p class="project-modal__lead">A UML-based university registration system designed around requirements and system modelling.</p>
+        <div class="project-modal__grid">
+            <div>
+              <h3>Project overview</h3>
+              <p>Analysis and modelling of a university registration system, including students, courses and enrolments.</p>
+            </div>
+            <div>
+              <h3>Key concepts</h3>
+              <p>Requirements analysis, use case diagrams, class diagrams and system interaction diagrams.</p>
+            </div>
+        </div>
+        <h3>Key features</h3>
+        <ul class="project-modal__list">
+            <li>Use case diagrams of the registration process</li>
+            <li>Class diagram of students, courses and enrolments</li>
+            <li>Interaction diagrams describing how the system behaves</li>
+            <li>Requirements analysis before the design</li>
+        </ul>
+        <h3>Tech stack</h3>
+        <div class="project-tags">
+            <span>UML</span>
+            <span>Use Case Diagrams</span>
+            <span>Class Diagrams</span>
+        </div>
+        <div class="project-modal__actions">
+          <!-- To link the repository, add href="https://github.com/..." to this tag. -->
+          <button class="project-modal__secondary" type="button" data-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="project-modal" id="project-timemanager" aria-labelledby="project-timemanager-title">
+    <div class="project-modal__inner">
+      <button class="project-modal__close" type="button" data-close aria-label="Close">&times;</button>
+      <div class="project-modal__image">
+        <img src="assets/images/projects/timemanager.svg" alt="Time Manager application dashboard displayed on a laptop" loading="lazy">
+      </div>
+      <div class="project-modal__body">
+        <span class="project-category">Full-Stack Development</span>
+        <h2 id="project-timemanager-title">Time Manager</h2>
+        <p class="project-modal__context">Team project · Full-stack web development</p>
+        <p class="project-modal__lead">A collaborative time-management application for managing users, working hours and clock-in activities.</p>
+        <div class="project-modal__grid">
+            <div>
+              <h3>Project overview</h3>
+              <p>A full-stack application with a frontend/backend architecture connected through an API.</p>
+            </div>
+            <div>
+              <h3>My contribution</h3>
+              <p>Collaborative development involving user management, working-time management, API integration and data visualisation.</p>
+            </div>
+        </div>
+        <h3>Key features</h3>
+        <ul class="project-modal__list">
+            <li>User management</li>
+            <li>Clock-in and clock-out tracking</li>
+            <li>Working-time management</li>
+            <li>Data visualisation of working hours</li>
+            <li>Frontend and backend connected through an API</li>
+        </ul>
+        <h3>Tech stack</h3>
+        <div class="project-tags">
+            <span>Elixir</span>
+            <span>Phoenix</span>
+            <span>Vue.js</span>
+            <span>PostgreSQL</span>
+            <span>Docker</span>
+        </div>
+        <div class="project-modal__actions">
+          <!-- To link the repository, add href="https://github.com/..." to this tag. -->
+          <button class="project-modal__secondary" type="button" data-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>&copy; 2026 Yasmine Baba &middot; Casablanca and Paris</p>
+      <p>
+        <a href="mailto:yasmiiineeeeb@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yasmine-baba-52b796362/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Yasmine12-dev" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+section {
+  padding: 3.5rem 0;
+
+  @include md {
+    padding: 2.5rem 0;
+  }
+}
+
+// Tinted band, to separate a section from its neighbours.
+.alt {
+  background: $surface;
+  border-block: 1px solid $line;
+}
+
+// Title block at the top of every page except the home page.
+.pagehead {
+  padding: 3rem 0 1.5rem;
+}
+
+// Section heading with an optional link on the right.
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.stack > * + * {
+  margin-top: 1rem;
+}

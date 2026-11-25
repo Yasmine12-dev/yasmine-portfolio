@@ -1,0 +1,40 @@
+.foot {
+  background: $surface;
+  border-top: 1px solid $line;
+  padding: 2.5rem 0;
+  font-size: 0.9375rem;
+
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  p {
+    color: $muted;
+    margin: 0;
+  }
+
+  a {
+    color: $muted;
+    text-decoration: none;
+    margin-left: 1.25rem;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  @include md {
+    .wrap {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    a {
+      margin: 0 1.25rem 0 0;
+    }
+  }
+}

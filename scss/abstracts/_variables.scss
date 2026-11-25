@@ -1,0 +1,62 @@
+// Purple and lavender palette shared by every English and French page.
+// Deep purple is used for accessible text and controls; pale lavender stays
+// in the surfaces so the interface remains calm and readable.
+:root {
+  --paper: #fcfaff;
+  --surface: #f6f1fb;
+  --surface-accent: #eee5fa;
+  --ink: #211a2b;
+  --muted: #665d70;
+  --line: #e7ddf0;
+  --line-strong: #cdbddf;
+  --accent: #6b45a5;
+  --accent-hover: #553586;
+  --on-accent: #ffffff;
+  --danger: #9a4355;
+  --nav-bg: rgba(252, 250, 255, 0.94);
+  --shadow: rgba(42, 26, 61, 0.12);
+  --focus-ring: rgba(107, 69, 165, 0.24);
+  color-scheme: light;
+}
+
+// Dark mode keeps the same lavender identity with enough contrast for text.
+[data-theme=dark] {
+  --paper: #17131e;
+  --surface: #211a2b;
+  --surface-accent: #2c223a;
+  --ink: #f4eef9;
+  --muted: #b8afc3;
+  --line: #392d49;
+  --line-strong: #514061;
+  --accent: #c4a6f0;
+  --accent-hover: #d8c6f7;
+  --on-accent: #1a1422;
+  --danger: #f0a0ad;
+  --nav-bg: rgba(23, 19, 30, 0.94);
+  --shadow: rgba(0, 0, 0, 0.42);
+  --focus-ring: rgba(196, 166, 240, 0.32);
+  color-scheme: dark;
+}
+
+// Sass aliases, so the partials below stay readable.
+$ink: var(--ink);
+$muted: var(--muted);
+$paper: var(--paper);
+$surface: var(--surface);
+$surface-accent: var(--surface-accent);
+$line: var(--line);
+$line-strong: var(--line-strong);
+$accent: var(--accent);
+$accent-hover: var(--accent-hover);
+$on-accent: var(--on-accent);
+$danger: var(--danger);
+$nav-bg: var(--nav-bg);
+$shadow: var(--shadow);
+$focus-ring: var(--focus-ring);
+
+// Typeface
+$sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+// Layout
+$measure: 1040px;
+$bp-md: 820px;

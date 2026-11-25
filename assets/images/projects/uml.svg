@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="Segoe UI, Inter, system-ui, sans-serif">
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#d5d9e0"/></pattern>
+    <filter id="sh" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1e293b" flood-opacity="0.12"/></filter>
+    <marker id="dia" viewBox="0 0 22 12" refX="22" refY="6" markerWidth="22" markerHeight="12" orient="auto"><path d="M0 6 L11 0 L22 6 L11 12 Z" fill="#fff" stroke="#334155" stroke-width="1.5"/></marker>
+    <marker id="arr" viewBox="0 0 14 14" refX="14" refY="7" markerWidth="14" markerHeight="14" orient="auto"><path d="M0 0 L14 7 L0 14" fill="none" stroke="#334155" stroke-width="2"/></marker>
+  </defs>
+  <rect width="1600" height="1000" fill="#f3f4f6"/>
+
+  <!-- menu bar -->
+  <rect width="1600" height="34" fill="#ffffff"/>
+  <g font-size="14" fill="#374151"><text x="20" y="22" font-weight="700" fill="#1d4ed8">◆ Diagrams</text><text x="140" y="22">File</text><text x="190" y="22">Edit</text><text x="240" y="22">View</text><text x="295" y="22">Arrange</text><text x="370" y="22">Extras</text><text x="435" y="22">Help</text></g>
+  <text x="800" y="22" font-size="14" fill="#6b7280" text-anchor="middle">online-registration-system — Class diagram</text>
+
+  <!-- toolbar -->
+  <rect y="34" width="1600" height="44" fill="#fafafa"/>
+  <line x1="0" x2="1600" y1="78" y2="78" stroke="#e5e7eb"/>
+  <g fill="none" stroke="#6b7280" stroke-width="2">
+    <path d="M24 60 a8 8 0 1 1 8 8"/><path d="M76 60 a8 8 0 1 0 -8 8"/>
+    <rect x="110" y="48" width="18" height="18" rx="2"/><circle cx="160" cy="57" r="9"/><path d="M190 66 l18 -18"/><rect x="236" y="50" width="22" height="14" rx="7"/>
+  </g>
+  <rect x="300" y="46" width="70" height="24" rx="4" fill="#fff" stroke="#d1d5db"/><text x="314" y="63" font-size="13" fill="#374151">100%</text>
+
+  <!-- shape palette -->
+  <rect x="0" y="78" width="230" height="922" fill="#ffffff"/>
+  <line x1="230" x2="230" y1="78" y2="1000" stroke="#e5e7eb"/>
+  <rect x="14" y="94" width="202" height="32" rx="6" fill="#f3f4f6"/><text x="28" y="115" font-size="13" fill="#9ca3af">Search shapes</text>
+  <text x="18" y="156" font-size="13" font-weight="700" fill="#374151">▾ UML</text>
+  <g fill="#fff" stroke="#9ca3af" stroke-width="1.5">
+    <rect x="20" y="172" width="56" height="44"/><line x1="20" x2="76" y1="186" y2="186"/>
+    <rect x="88" y="172" width="56" height="44"/><line x1="88" x2="144" y1="186" y2="186"/><line x1="88" x2="144" y1="200" y2="200"/>
+    <ellipse cx="184" cy="194" rx="28" ry="18"/>
+    <circle cx="48" cy="238" r="8"/><path d="M48 246 v16 M36 252 h24 M48 262 l-10 14 M48 262 l10 14"/>
+    <rect x="88" y="232" width="56" height="40" rx="4"/>
+    <path d="M160 252 h44 M196 246 l8 6 l-8 6"/>
+  </g>
+  <text x="18" y="318" font-size="13" font-weight="700" fill="#374151">▸ General</text>
+  <text x="18" y="350" font-size="13" font-weight="700" fill="#374151">▸ Arrows</text>
+  <text x="18" y="382" font-size="13" font-weight="700" fill="#374151">▸ Entity Relation</text>
+
+  <!-- canvas -->
+  <rect x="231" y="79" width="1069" height="921" fill="url(#dots)"/>
+
+  <!-- format panel -->
+  <rect x="1300" y="78" width="300" height="922" fill="#ffffff"/>
+  <line x1="1300" x2="1300" y1="78" y2="1000" stroke="#e5e7eb"/>
+  <g font-size="13"><text x="1324" y="110" font-weight="700" fill="#1d4ed8">Style</text><text x="1390" y="110" fill="#6b7280">Text</text><text x="1446" y="110" fill="#6b7280">Arrange</text></g>
+  <rect x="1324" y="118" width="38" height="2" fill="#1d4ed8"/>
+  <g font-size="13" fill="#374151">
+    <text x="1324" y="156">Fill</text><rect x="1500" y="144" width="70" height="18" rx="3" fill="#dbeafe" stroke="#93c5fd"/>
+    <text x="1324" y="190">Line</text><rect x="1500" y="178" width="70" height="18" rx="3" fill="#1e40af"/>
+    <text x="1324" y="224">Rounded</text><rect x="1500" y="212" width="18" height="18" rx="3" fill="#fff" stroke="#9ca3af"/>
+    <text x="1324" y="258">Shadow</text><rect x="1500" y="246" width="18" height="18" rx="3" fill="#2563eb"/><path d="M1504 255 l4 4 l7 -8" stroke="#fff" stroke-width="2" fill="none"/>
+    <line x1="1324" x2="1576" y1="282" y2="282" stroke="#e5e7eb"/>
+    <text x="1324" y="312" font-weight="700">Selected: Enrollment</text>
+    <text x="1324" y="340" fill="#6b7280">Position   676, 600</text>
+    <text x="1324" y="364" fill="#6b7280">Size         248 × 170</text>
+  </g>
+
+  <!-- relationships -->
+  <g stroke="#334155" stroke-width="2" fill="none">
+    <path d="M520 290 H660" marker-end="url(#dia)"/>
+    <path d="M940 290 H1130 V410" marker-start="url(#dia)"/>
+    <path d="M405 425 V685 H676"/>
+    <path d="M924 685 H960 V520 H990"/>
+    <path d="M1130 790 V650" marker-end="url(#arr)"/>
+  </g>
+  <g font-size="14" fill="#334155" font-weight="600">
+    <text x="530" y="280">*</text><text x="636" y="280">1</text>
+    <text x="1140" y="400">*</text><text x="950" y="280">1</text>
+    <text x="414" y="450">1</text><text x="640" y="676">0..*</text>
+    <text x="930" y="676">0..*</text><text x="968" y="512">1</text>
+    <text x="1140" y="782">1..*</text>
+  </g>
+  <g font-size="13" fill="#475569" font-style="italic">
+    <text x="560" y="310">manages</text>
+    <text x="460" y="676">enrolls</text>
+    <text x="1142" y="725">teaches</text>
+  </g>
+
+  <!-- class boxes -->
+  <g filter="url(#sh)" stroke="#1e40af" stroke-width="2">
+    <rect x="290" y="190" width="230" height="235" fill="#fff"/>
+    <rect x="660" y="190" width="280" height="200" fill="#fff"/>
+    <rect x="990" y="410" width="280" height="240" fill="#fff"/>
+    <rect x="676" y="600" width="248" height="170" fill="#fff"/>
+    <rect x="990" y="790" width="280" height="150" fill="#fff"/>
+  </g>
+  <g fill="#dbeafe" stroke="#1e40af" stroke-width="2">
+    <rect x="290" y="190" width="230" height="40"/>
+    <rect x="660" y="190" width="280" height="40"/>
+    <rect x="990" y="410" width="280" height="40"/>
+    <rect x="676" y="600" width="248" height="40"/>
+    <rect x="990" y="790" width="280" height="40"/>
+  </g>
+  <g stroke="#1e40af" stroke-width="1.5">
+    <line x1="290" x2="520" y1="340" y2="340"/>
+    <line x1="660" x2="940" y1="300" y2="300"/>
+    <line x1="990" x2="1270" y1="570" y2="570"/>
+    <line x1="676" x2="924" y1="718" y2="718"/>
+    <line x1="990" x2="1270" y1="890" y2="890"/>
+  </g>
+  <g font-size="16" font-weight="700" fill="#1e3a8a" text-anchor="middle">
+    <text x="405" y="216">Student</text>
+    <text x="800" y="216">RegistrationSystem</text>
+    <text x="1130" y="436">Course</text>
+    <text x="800" y="626">Enrollment</text>
+    <text x="1130" y="816">Professor</text>
+  </g>
+  <g font-size="14" fill="#1f2937" font-family="Consolas, 'Courier New', monospace">
+    <text x="304" y="256">- studentId: int</text>
+    <text x="304" y="278">- name: String</text>
+    <text x="304" y="300">- email: String</text>
+    <text x="304" y="322">- program: String</text>
+    <text x="304" y="364">+ register(c: Course)</text>
+    <text x="304" y="386">+ drop(c: Course)</text>
+    <text x="304" y="408">+ viewSchedule()</text>
+
+    <text x="674" y="256">- students: List&lt;Student&gt;</text>
+    <text x="674" y="278">- courses: List&lt;Course&gt;</text>
+    <text x="674" y="324">+ enroll(s, c): Enrollment</text>
+    <text x="674" y="346">+ checkPrerequisites(s, c)</text>
+    <text x="674" y="368">+ generateReport()</text>
+
+    <text x="1004" y="476">- code: String</text>
+    <text x="1004" y="498">- title: String</text>
+    <text x="1004" y="520">- credits: int</text>
+    <text x="1004" y="542">- capacity: int</text>
+    <text x="1004" y="594">+ hasSeats(): boolean</text>
+    <text x="1004" y="616">+ addStudent(s: Student)</text>
+
+    <text x="690" y="666">- date: Date</text>
+    <text x="690" y="688">- status: Status</text>
+    <text x="690" y="708">- grade: String</text>
+    <text x="690" y="742">+ confirm()</text>
+    <text x="690" y="762">+ cancel()</text>
+
+    <text x="1004" y="856">- employeeId: int</text>
+    <text x="1004" y="878">- department: String</text>
+    <text x="1004" y="916">+ assignGrade(e: Enrollment)</text>
+  </g>
+
+  <!-- selection handles on Enrollment -->
+  <rect x="672" y="596" width="256" height="178" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <g fill="#ffffff" stroke="#2563eb" stroke-width="2">
+    <rect x="666" y="590" width="12" height="12"/><rect x="794" y="590" width="12" height="12"/><rect x="922" y="590" width="12" height="12"/>
+    <rect x="666" y="679" width="12" height="12"/><rect x="922" y="679" width="12" height="12"/>
+    <rect x="666" y="768" width="12" height="12"/><rect x="794" y="768" width="12" height="12"/><rect x="922" y="768" width="12" height="12"/>
+  </g>
+
+  <!-- page tabs -->
+  <rect x="231" y="962" width="1069" height="38" fill="#ffffff"/>
+  <line x1="231" x2="1300" y1="962" y2="962" stroke="#e5e7eb"/>
+  <rect x="250" y="966" width="130" height="34" fill="#f3f4f6"/>
+  <g font-size="13"><text x="266" y="988" fill="#111827" font-weight="600">Class diagram</text><text x="400" y="988" fill="#6b7280">Use cases</text><text x="490" y="988" fill="#6b7280">Sequence</text><text x="574" y="988" fill="#6b7280">Activity</text></g>
+</svg>

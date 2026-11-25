@@ -1,0 +1,50 @@
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.15rem;
+  border: 1px solid $line;
+  border-radius: 6px;
+  background: $paper;
+  color: $ink;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+
+  &:hover {
+    border-color: $line-strong;
+    background: $surface;
+  }
+}
+
+.btn--primary {
+  background: $accent;
+  border-color: $accent;
+  color: $paper;
+
+  &:hover {
+    background: $accent-hover;
+    border-color: $accent-hover;
+  }
+}
+
+// A row of buttons closing a section.
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+// Text link that reads as an action.
+.link {
+  color: $accent;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,62 @@
+form {
+  display: grid;
+  gap: 1rem;
+  max-width: 32rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid $line;
+  border-radius: 6px;
+  background: $paper;
+  color: inherit;
+
+  &:focus {
+    outline: 0;
+    border-color: $accent;
+    box-shadow: 0 0 0 3px $focus-ring;
+  }
+
+  &[aria-invalid=true] {
+    border-color: $danger;
+  }
+}
+
+// Per-field validation message.
+.err {
+  color: $danger;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  min-height: 1em;
+}
+
+// Message that appears after the visitor submits the form.
+.status {
+  font-size: 0.875rem;
+  color: $muted;
+  min-height: 1.25em;
+  margin: 0;
+}
+
+form .btn {
+  justify-self: start;
+}
+
+// Honeypot field for the contact form: invisible to people, tempting to bots.
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
