@@ -68,13 +68,13 @@ Shared links preview with `assets/images/og.png`, 1200x630. Regenerate it if the
 
 All of that hardcodes one address:
 
-    https://yasmine-portfolio.vercel.app
+    https://https://yasminebaba.vercel.app
 
 Those URLs currently point to the GitHub Pages address. If the site is deployed on Vercel or moved to a custom domain, replace the base URL in the canonical, Open Graph, structured-data, `robots.txt` and `sitemap.xml` references before submitting the sitemap to Google Search Console:
 
 ```
 grep -rl "yasmine12-dev.github.io/Yasmine-Portfolio" . \
-  | xargs sed -i "s|https://yasmine-portfolio.vercel.app|https://your-domain.com|g"
+  | xargs sed -i "s|https://https://yasminebaba.vercel.app|https://your-domain.com|g"
 ```
 
 A wrong canonical URL is worse than none, so do this before submitting the sitemap to Google Search Console.
