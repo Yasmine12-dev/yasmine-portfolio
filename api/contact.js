@@ -1,6 +1,6 @@
 // Vercel serverless function: receives the contact form and emails it to Gmail.
 // Needs two environment variables in Vercel (see README):
-//   GMAIL_USER          the Gmail address configured in Vercel
+//   GMAIL_USER          the Gmail address that sends and receives (yasmiiineeeeb@gmail.com)
 //   GMAIL_APP_PASSWORD  a 16-character Google "App password" (NOT your normal password)
 
 const nodemailer = require('nodemailer');
@@ -74,4 +74,3 @@ module.exports = async (req, res) => {
 };
 
 function safeParse(s) { try { return JSON.parse(s); } catch { return {}; } }
-
