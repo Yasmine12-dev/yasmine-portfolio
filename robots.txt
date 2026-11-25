@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://https://yasminebaba.vercel.app/sitemap.xml
+Sitemap: https://yasminebaba.vercel.app/sitemap.xml
